@@ -1,0 +1,24 @@
+.bracket-row {
+    min-height: 80vh;
+}
+
+.col-bracket {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: .5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.col-bracket .btn {
+    width: 85%;
+    max-width: 140px;
+}
+
+@media (max-width: 768px) {
+    .col-bracket .btn {
+        width: 100%;
+    }
+}
