@@ -22,12 +22,12 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build and push docker image
-        uses: docker/build-push-actions@v6.15.0
+        uses: docker/build-push-action@v6.15.0
         with:
           context: . 
           file: ./Dockerfile
           push: true
-          tag: andrevlopess/grupo-1-p2-front-devops:latest
+          tags: andrevlopess/grupo-1-p2-front-devops:latest
 
       - name: Azure app
         uses: Azure/webapps-deploy@v3.0.1
