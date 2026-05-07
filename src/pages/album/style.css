@@ -1,43 +1,32 @@
 
-.container{
+.app-container{
 	background-image: url(fundo-album.png);
 	background-size: cover;
-	width: 90%;
-	min-height: 700px;
-	border: 2px solid black;
-	border-radius: 8px;
-	padding: 30px;
-
-}
-
-.linha-topo{
-	display: grid;
-	grid-template-columns: repeat(5, auto);
-	justify-content: end;
-	padding-right: 160px;
-	gap: 8px;
-    margin-bottom: 8px;
-}
-
-.linha-baixo{
-    display: grid;
-	grid-template-columns: repeat(8, 147px);
+	display: flex;
 	justify-content: center;
+	align-items: center;
+	max-height: 100vh;
+	padding: 96px;
+}
+
+.album-grid{
+	display: grid;
+	grid-template-columns: repeat(8, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+	justify-content: end;
 	gap: 8px;
 }
 
-.fig{
-    height: 200px;
-	width: 147px;
-    border: 2px dashed gray;
-	
+.fig {
+	width: 100%;
+    border: 2px dashed white;
+	background-color: #ffffff30;
 }
-.fig-selecao{
-	height: 147px;
-	width: 200px;
-	gap: 8px;
-	
+.fig.selecao {
+	width: 150%;
+	height: 80%;
 }
+
 .fig img{
 	width: 100%;
 	height: 100%;
