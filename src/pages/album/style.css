@@ -1,24 +1,38 @@
 
 .container{
-	width: 100%;
+	width: 90%;
+	min-height: 700px;
+	border: 2px solid black;
+	border-radius: 8px;
+	padding: 30px;
+
 }
 
 .linha-topo{
 	display: grid;
-	grid-template-columns: repeat(5, 1fr);
-	gap: 10px;
-    margin-left: 480px;
-    margin-bottom: 10px;
+	grid-template-columns: repeat(5, auto);
+	justify-content: end;
+	padding-right: 160px;
+	gap: 8px;
+    margin-bottom: 8px;
 }
 
 .linha-baixo{
     display: grid;
-	grid-template-columns: repeat(8, 1fr);
-	gap: 15px
+	grid-template-columns: repeat(8, 147px);
+	justify-content: center;
+	gap: 8px;
 }
 
 .fig{
-    height: 150px;
-	width: 100px;
-    border: 2px solid black;
+    height: 200px;
+	width: 147px;
+    border: 2px dashed gray;
+	
+}
+.fig-selecao{
+	height: 147px;
+	width: 200px;
+	gap: 8px;
+	
 }
