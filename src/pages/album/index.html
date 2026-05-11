@@ -32,48 +32,54 @@
 			<button class="btn-carrossel anterior" onclick="mudarPagina(-1)">&#10094;</button>
 
 			<div class="conteudo-pais w-100 text-center">
-        	<h2 id="nomeDoPais" class="mb-3"></h2>
+				<!-- <h2 id="nomeDoPais" class="mb-3"></h2> -->
 
-			<div id="albumGrid" class="album-grid">
-				<div></div>
-				<div></div>	
-				<div class="col-3 fig selecao">
-					<img src="bra1.jpg" alt="Selecao">
-				</div>
-				<div></div>
+				<div id="albumGrid" class="album-grid">
+					<div></div>
+					<div></div>
+					<div class="col-3 fig selecao">
+						<img src="bra1.jpg" alt="Selecao">
+					</div>
+					<div></div>
 
-				<div class="col-3 fig">2</div>
-				<div class="col-3 fig">3</div>
-				<div class="col-3 fig">4</div>
-				<div></div>
+					<div class="col-3 fig">2</div>
+					<div class="col-3 fig">3</div>
+					<div class="col-3 fig">4</div>
+					<div></div>
 
-				<div class="col-3 fig team">
-					brasao
+					<div class="col-3 fig team">
+						brasao
+					</div>
+					<div class="col-3 fig">7</div>
+					<div class="col-3 fig">8</div>
+					<div class="col-3 fig">9</div>
+					<div class="col-3 fig">10</div>
+					<div class="col-3 fig">11</div>
+					<div class="col-3 fig">12</div>
+					<div class="col-3 fig">13</div>
+					<div class="col-3 fig">14</div>
+					<div class="col-3 fig">15</div>
+					<div class="col-3 fig">16</div>
+					<div class="col-3 fig">17</div>
+					<div class="col-3 fig">18
+
+					</div>
+					<div class="col-3 fig">19</div>
+					<div class="col-3 fig">20</div>
+					<div class="col-3 fig">21</div>
 				</div>
-				<div class="col-3 fig">7</div>
-				<div class="col-3 fig">8</div>
-				<div class="col-3 fig">9</div>
-				<div class="col-3 fig">10</div>
-				<div class="col-3 fig">11</div>
-				<div class="col-3 fig">12</div>
-				<div class="col-3 fig">13</div>
-				<div class="col-3 fig">14</div>
-				<div class="col-3 fig">15</div>
-				<div class="col-3 fig">16</div>
-				<div class="col-3 fig">17</div>
-				<div class="col-3 fig">18
-					
+				<div class="row pt-4">
+					<div class="col">
+						<button class="btn btn-secondary btn-lg">Abrir pacotinho</button>
+
+					</div>
 				</div>
-				<div class="col-3 fig">19</div>
-				<div class="col-3 fig">20</div>
-				<div class="col-3 fig">21</div>
 			</div>
+
+			<button class="btn-carrossel proximo" onclick="mudarPagina(1)">&#10095;</button>
 		</div>
-
-		<button class="btn-carrossel proximo" onclick="mudarPagina(1)">&#10095;</button>
-
 	</div>
-	</div>
+
 
 
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
@@ -81,178 +87,178 @@
 		crossorigin="anonymous"></script>
 
 	<script>
-		
+
 		const bancoDeDadosAlbum = {
 			alemanha: {
-				nome : "Alemanha",
+				nome: "Alemanha",
 				totalFigurinhas: 20,
 				fundo: "../../assets/background/fundo-alemanha.png",
 				coladas: {}
 			},
 			argentina: {
-				nome : "Argentina",
+				nome: "Argentina",
 				totalFigurinhas: 20,
 				fundo: "../../assets/background/fundo-argentina.png",
 				coladas: {}
 			},
 			australia: {
-				nome : "Australia",
+				nome: "Australia",
 				totalFigurinhas: 20,
 				fundo: "../../assets/background/fundo-australia.png",
 				coladas: {}
 			},
 			brasil: {
-				nome : "Brasil",
+				nome: "Brasil",
 				totalFigurinhas: 20,
 				fundo: "../../assets/background/fundo-brasil.png",
 				coladas: {}
 			},
 			coreia: {
-				nome : "Coreia",
+				nome: "Coreia",
 				totalFigurinhas: 20,
 				fundo: "../../assets/background/fundo-coreia.png",
 				coladas: {}
 			},
 			croacia: {
-				nome : "Croacia",
+				nome: "Croacia",
 				totalFigurinhas: 20,
 				fundo: "../../assets/background/fundo-croacia.jpg",
 				coladas: {}
 			},
 			espanha: {
-				nome : "Espanha",
+				nome: "Espanha",
 				totalFigurinhas: 20,
 				fundo: "../../assets/background/fundo-espanha.png",
 				coladas: {}
 			},
 			franca: {
-				nome : "Franca",
+				nome: "Franca",
 				totalFigurinhas: 20,
 				fundo: "../../assets/background/fundo-franca.png",
 				coladas: {}
 			},
 			holanda: {
-				nome : "Holanda",
+				nome: "Holanda",
 				totalFigurinhas: 20,
 				fundo: "../../assets/background/fundo-holanda.png",
 				coladas: {}
 			},
 			inglaterra: {
-				nome : "Inglaterra",
+				nome: "Inglaterra",
 				totalFigurinhas: 20,
 				fundo: "../../assets/background/fundo-inglaterra.png",
 				coladas: {}
 			},
 			japao: {
-				nome : "Japão",
+				nome: "Japão",
 				totalFigurinhas: 20,
 				fundo: "../../assets/background/fundo-japao.png",
 				coladas: {}
 			},
 			marrocos: {
-				nome : "Marrocos",
+				nome: "Marrocos",
 				totalFigurinhas: 20,
 				fundo: "../../assets/background/fundo-marrocos.png",
 				coladas: {}
 			},
 			polonia: {
-				nome : "Polonia",
+				nome: "Polonia",
 				totalFigurinhas: 20,
 				fundo: "../../assets/background/fundo-polonia.png",
 				coladas: {}
 			},
 			portugal: {
-				nome : "Portugal",
+				nome: "Portugal",
 				totalFigurinhas: 20,
 				fundo: "../../assets/background/fundo-portugal.png",
 				coladas: {}
 			},
 			senegal: {
-				nome : "Senegal",
+				nome: "Senegal",
 				totalFigurinhas: 20,
 				fundo: "../../assets/background/fundo-senegal.png",
 				coladas: {}
 			},
 			suica: {
-				nome : "Suiça",
+				nome: "Suiça",
 				totalFigurinhas: 20,
 				fundo: "../../assets/background/fundo-suica.png",
 				coladas: {}
 			},
 			eua: {
-				nome : "Estados Unidos",
+				nome: "Estados Unidos",
 				fundo: "../../assets/background/fundo-eua.png",
 				totalFigurinhas: 20,
 				coladas: {}
 			},
 		};
 
-		const ordemPaises = ["alemanha", "argentina", "australia", "brasil", "coreia", "croacia", "espanha", "eua", 
-		"franca", "holanda", "inglaterra", "japao", "marrocos", "polonia", "portugal", "senegal", "suica"];
+		const ordemPaises = ["alemanha", "argentina", "australia", "brasil", "coreia", "croacia", "espanha", "eua",
+			"franca", "holanda", "inglaterra", "japao", "marrocos", "polonia", "portugal", "senegal", "suica"];
 		let indiceAtual = 0;
 
-		function renderizarAlbum(){
+		function renderizarAlbum() {
 			const grid = document.getElementById("albumGrid");
 			const titulo = document.getElementById("nomeDoPais");
 
 			const containerFundo = document.getElementById("appContainer");
-			
+
 			const siglaAtual = ordemPaises[indiceAtual];
 			const dadosPais = bancoDeDadosAlbum[siglaAtual];
 
-			if(titulo) titulo.innerText = dadosPais.nome;
+			if (titulo) titulo.innerText = dadosPais.nome;
 
 			if (containerFundo && dadosPais.fundo) {
-            containerFundo.style.backgroundImage = `url(${dadosPais.fundo})`;
-        	}
+				containerFundo.style.backgroundImage = `url(${dadosPais.fundo})`;
+			}
 
 			grid.innerHTML = '';
 
 			grid.appendChild(document.createElement('div'));
-        	grid.appendChild(document.createElement('div'));
+			grid.appendChild(document.createElement('div'));
 
-			for (let i = 1; i <= dadosPais.totalFigurinhas; i++){
+			for (let i = 1; i <= dadosPais.totalFigurinhas; i++) {
 				const divFigurinha = document.createElement("div");
 
 				const figurinhaColada = dadosPais.coladas[i];
 
-				if (figurinhaColada){
+				if (figurinhaColada) {
 					divFigurinha.className = `col-3 fig ${figurinhaColada.classeExtra}`;
 					divFigurinha.innerHTML = `<img src="${figurinhaColada.img}" alt="Figurinha ${i}">`;
 				} else {
 					divFigurinha.className = 'col-3 fig';
-                	divFigurinha.innerText = i;
+					divFigurinha.innerText = i;
 				}
 
 				if (i === 1) {
-                    divFigurinha.classList.add('selecao');
-                }
+					divFigurinha.classList.add('selecao');
+				}
 
 				grid.appendChild(divFigurinha);
 
 				if (i === 1 || i === 8 || i === 16) {
-                grid.appendChild(document.createElement('div'));
-            } else if (i === 4) {
-                grid.appendChild(document.createElement('div'));
-            }
+					grid.appendChild(document.createElement('div'));
+				} else if (i === 4) {
+					grid.appendChild(document.createElement('div'));
+				}
 			}
 		}
 
-		function mudarPagina(direcao){
+		function mudarPagina(direcao) {
 			indiceAtual += direcao;
 
-        if (indiceAtual < 0) {
-            indiceAtual = ordemPaises.length - 1;
-        } else if (indiceAtual >= ordemPaises.length) {
-            indiceAtual = 0;
-        }
+			if (indiceAtual < 0) {
+				indiceAtual = ordemPaises.length - 1;
+			} else if (indiceAtual >= ordemPaises.length) {
+				indiceAtual = 0;
+			}
 
-        renderizarAlbum();
+			renderizarAlbum();
 		}
 
 		window.onload = () => {
-        renderizarAlbum();
-    };
+			renderizarAlbum();
+		};
 	</script>
 </body>
 
