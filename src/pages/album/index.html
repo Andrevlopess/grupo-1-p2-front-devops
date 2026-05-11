@@ -231,11 +231,8 @@
 				grid.appendChild(divFigurinha);
 
 				if (i === 1 || i === 8 || i === 16) {
-                // Cria a lombada do livro dividindo as páginas no meio
                 grid.appendChild(document.createElement('div'));
             } else if (i === 4) {
-                // Cria um buraco no canto superior direito para NÃO tampar o logo do Qatar!
-                // Isso empurra a carta 5 para a linha de baixo.
                 grid.appendChild(document.createElement('div'));
             }
 			}
@@ -244,7 +241,6 @@
 		function mudarPagina(direcao){
 			indiceAtual += direcao;
 
-        // Faz o carrossel dar a volta se passar do limite
         if (indiceAtual < 0) {
             indiceAtual = ordemPaises.length - 1;
         } else if (indiceAtual >= ordemPaises.length) {
