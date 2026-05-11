@@ -1,30 +1,52 @@
 
 .app-container{
-	background-image: url(fundo-album.png);
-	background-size: cover;
+	background-size: 100% 100%;
+	background-position: top center;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	max-height: 100vh;
-	padding: 96px;
+	height: 100vh;
+	width: 100vw;
+	padding: 20px;
+    margin: 0;
+	transition: background-image 0.4s ease-in-out;
+}
+.album {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+    max-width: 98%;
+	margin-top: -140px; /* mantém o tamanho original do conteúdo */
 }
 
 .album-grid{
 	display: grid;
-	grid-template-columns: repeat(8, 1fr);
-	grid-template-rows: repeat(3, 1fr);
-	justify-content: end;
-	gap: 8px;
+    grid-template-columns: repeat(4, 1fr) 60px repeat(4, 1fr);
+    gap: 16px;
+    width: 100%;
+	max-width: 1500px;
+	margin: 0 auto;
 }
 
 .fig {
-	width: 100%;
+    width: 100%;
+    aspect-ratio: 3 / 4; /* Mantém a proporção de carta */
     border: 2px dashed white;
-	background-color: #ffffff30;
+    background-color: rgba(255, 255, 255, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
 }
 .fig.selecao {
-	width: 150%;
-	height: 80%;
+    width: 100%;
+    height: 100%;
+    grid-column: span 2; /* Ocupa 2 colunas */
+    aspect-ratio: auto; /* Remove a proporção para ela poder deitar */
 }
 
 .fig img{
@@ -32,4 +54,49 @@
 	height: 100%;
 	object-fit: cover;
 
+}
+
+
+.conteudo-pais {
+    flex-grow: 1; /* Faz o miolo crescer e empurrar as setas para as laterais */
+    width: 100%;
+}
+
+#nomeDoPais {
+    color: white;
+    text-transform: uppercase;
+    font-weight: 800;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 10px 30px;
+    border-radius: 8px;
+    display: inline-block;
+	margin-bottom: 2rem !important;
+}
+
+.btn-carrossel {
+    background-color: #fff;
+    border: none;
+    color: #333;
+    font-size: 2rem;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease;
+    flex-shrink: 0; /* Impede o botão de encolher */
+    z-index: 10;
+}
+
+.btn-carrossel:hover {
+    transform: scale(1.1);
+}
+
+.btn-carrossel.anterior {
+    left: -80px;
+}
+
+.btn-carrossel.proximo {
+    right: -80px;
 }
