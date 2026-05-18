@@ -366,7 +366,8 @@
 
 			function handleOpenPack() {
   				const pack = openPack(stickers);
-
+				handleSavePack(pack);
+				
   				const container = document.getElementById('pack-result');
   				container.innerHTML = '';
 
@@ -391,6 +392,17 @@
 
 			function fecharPacote() {
   				document.getElementById('modal-overlay').style.display = 'none';
+			}
+
+			function handleSavePack(stickersFound) {
+				const currentStickers = JSON.parse(
+					localStorage.getItem('collection-stickers') || "[]"
+				);
+
+				localStorage.setItem(
+					'collection-stickers',
+					JSON.stringify(currentStickers.concat(stickersFound))
+				);
 			}
 		</script>
 	</body>
