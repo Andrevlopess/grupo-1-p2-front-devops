@@ -1,0 +1,102 @@
+
+.app-container{
+	background-size: 100% 100%;
+	background-position: top center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	width: 100vw;
+	padding: 20px;
+    margin: 0;
+	transition: background-image 0.4s ease-in-out;
+}
+.album {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+    max-width: 98%;
+	/* margin-top: -140px; */
+}
+
+.album-grid{
+	display: grid;
+    grid-template-columns: repeat(4, 1fr) 60px repeat(4, 1fr);
+    gap: 16px;
+    width: 100%;
+	max-width: 1500px;
+	margin: 0 auto;
+}
+
+.fig {
+    width: 100%;
+    aspect-ratio: 3 / 4; 
+    border: 2px dashed white;
+    background-color: rgba(255, 255, 255, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+}
+.fig.selecao {
+    width: 100%;
+    height: 100%;
+    grid-column: span 2; /* Ocupa 2 colunas */
+    aspect-ratio: auto; 
+}
+
+.fig img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+
+}
+
+
+.conteudo-pais {
+    flex-grow: 1; 
+    width: 100%;
+}
+
+#nomeDoPais {
+    color: white;
+    text-transform: uppercase;
+    font-weight: 800;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 10px 30px;
+    border-radius: 8px;
+    display: inline-block;
+	margin-bottom: 2rem !important;
+}
+
+.btn-carrossel {
+    background-color: #fff;
+    border: none;
+    color: #333;
+    font-size: 2rem;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease;
+    flex-shrink: 0; 
+    z-index: 10;
+}
+
+.btn-carrossel:hover {
+    transform: scale(1.1);
+}
+
+.btn-carrossel.anterior {
+    left: -80px;
+}
+
+.btn-carrossel.proximo {
+    right: -80px;
+}
