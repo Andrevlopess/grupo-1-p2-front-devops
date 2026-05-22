@@ -267,6 +267,17 @@
 		window.onload = () => {
 			renderizarAlbum();
 		};
+
+		window.onload = () => {
+  			const params = new URLSearchParams(window.location.search);
+  			const paisParam = params.get('pais');
+
+  			if (paisParam && ordemPaises.includes(paisParam)) {
+    			indiceAtual = ordemPaises.indexOf(paisParam);
+  			}
+
+  			renderizarAlbum();
+		};
 	</script>
 	<script src="../../public/stickers.js"></script>
 	<script src="../../pages/sorteiofig.js"></script>	
