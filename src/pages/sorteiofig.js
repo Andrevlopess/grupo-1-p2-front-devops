@@ -41,6 +41,11 @@
 
 			function fecharPacote() {
   				document.getElementById('modal-overlay').style.display = 'none';
+				
+				sincAlbum();
+        
+        
+        		renderizarAlbum();
 			}
 
 			function handleSavePack(stickersFound) {

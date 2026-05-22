@@ -30,9 +30,13 @@
 	margin: 0 auto;
 }
 
+.album-grid > div:not(.selecao) {
+    aspect-ratio: 3 / 4;
+}
+
 .fig {
-    width: 100%;
-    aspect-ratio: 3 / 4; 
+   width: 100%;
+    height: 100%;
     border: 2px dashed white;
     background-color: rgba(255, 255, 255, 0.3);
     display: flex;
@@ -41,18 +45,31 @@
     font-size: 1.5rem;
     font-weight: bold;
     color: white;
+    min-width: 0;
+    min-height: 0;
+    overflow: hidden;
+    border-radius: 4px;
 }
 .fig.selecao {
+    grid-column: span 2;
+    aspect-ratio: 6 / 4;
+}
+
+.fig.selecao img {
     width: 100%;
     height: 100%;
-    grid-column: span 2; /* Ocupa 2 colunas */
-    aspect-ratio: auto; 
+    object-fit: cover;
+    object-position: center;
+    display: block;
 }
 
 .fig img{
 	width: 100%;
-	height: 100%;
-	object-fit: cover;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center; /* Foca nos rostos se precisar cortar */
+    border-radius: 4px;
+    display: block;
 
 }
 

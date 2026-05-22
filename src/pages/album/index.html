@@ -26,6 +26,11 @@
 					<button type="button" class="btn btn-primary btn-lg px-4 me-sm-3">Abrir pacote</button>
 				</div>
 			</div> -->
+
+			<a href="../brackets/index.html" class="btn btn-dark" style="position: absolute; top: 20px; left: 20px; z-index: 999;">
+       			 &#10094; Voltar para o Chaveamento
+    		</a>
+
 	<div id="appContainer" class="app-container">
 		<div class="album">
 
@@ -38,7 +43,7 @@
 					<div></div>
 					<div></div>
 					<div class="col-3 fig selecao">
-						<img src="bra1.jpg" alt="Selecao">
+						
 					</div>
 					<div></div>
 
@@ -97,103 +102,97 @@
 	<script>
 
 		const bancoDeDadosAlbum = {
-			alemanha: {
-				nome: "Alemanha",
-				totalFigurinhas: 20,
-				fundo: "../../assets/background/fundo-alemanha.png",
-				coladas: {}
-			},
-			argentina: {
+			arg: {
 				nome: "Argentina",
 				totalFigurinhas: 20,
 				fundo: "../../assets/background/fundo-argentina.png",
 				coladas: {}
 			},
-			australia: {
+			aus: {
 				nome: "Australia",
 				totalFigurinhas: 20,
 				fundo: "../../assets/background/fundo-australia.png",
 				coladas: {}
 			},
-			brasil: {
+			bra: {
 				nome: "Brasil",
 				totalFigurinhas: 20,
 				fundo: "../../assets/background/fundo-brasil.png",
 				coladas: {}
 			},
-			coreia: {
+			kor: {
 				nome: "Coreia",
 				totalFigurinhas: 20,
 				fundo: "../../assets/background/fundo-coreia.png",
 				coladas: {}
 			},
-			croacia: {
+			cro: {
 				nome: "Croacia",
 				totalFigurinhas: 20,
 				fundo: "../../assets/background/fundo-croacia.jpg",
 				coladas: {}
 			},
-			espanha: {
+			esp: {
 				nome: "Espanha",
 				totalFigurinhas: 20,
 				fundo: "../../assets/background/fundo-espanha.png",
 				coladas: {}
 			},
-			franca: {
+			fra: {
 				nome: "Franca",
 				totalFigurinhas: 20,
 				fundo: "../../assets/background/fundo-franca.png",
 				coladas: {}
 			},
-			holanda: {
+			ned: {
 				nome: "Holanda",
 				totalFigurinhas: 20,
 				fundo: "../../assets/background/fundo-holanda.png",
 				coladas: {}
 			},
-			inglaterra: {
+			eng: {
 				nome: "Inglaterra",
 				totalFigurinhas: 20,
 				fundo: "../../assets/background/fundo-inglaterra.png",
 				coladas: {}
 			},
-			japao: {
+			jpn: {
 				nome: "Japão",
 				totalFigurinhas: 20,
 				fundo: "../../assets/background/fundo-japao.png",
 				coladas: {}
 			},
-			marrocos: {
+			mar: {
 				nome: "Marrocos",
 				totalFigurinhas: 20,
 				fundo: "../../assets/background/fundo-marrocos.png",
 				coladas: {}
 			},
-			polonia: {
+			pol: {
 				nome: "Polonia",
 				totalFigurinhas: 20,
 				fundo: "../../assets/background/fundo-polonia.png",
 				coladas: {}
 			},
-			portugal: {
+			por: {
 				nome: "Portugal",
 				totalFigurinhas: 20,
 				fundo: "../../assets/background/fundo-portugal.png",
 				coladas: {}
 			},
-			senegal: {
+			sen: {
 				nome: "Senegal",
 				totalFigurinhas: 20,
 				fundo: "../../assets/background/fundo-senegal.png",
 				coladas: {}
 			},
-			suica: {
+			sui: {
 				nome: "Suiça",
 				totalFigurinhas: 20,
 				fundo: "../../assets/background/fundo-suica.png",
 				coladas: {}
 			},
-			eua: {
+			usa: {
 				nome: "Estados Unidos",
 				fundo: "../../assets/background/fundo-eua.png",
 				totalFigurinhas: 20,
@@ -201,9 +200,29 @@
 			},
 		};
 
-		const ordemPaises = ["alemanha", "argentina", "australia", "brasil", "coreia", "croacia", "espanha", "eua",
-			"franca", "holanda", "inglaterra", "japao", "marrocos", "polonia", "portugal", "senegal", "suica"];
+		const ordemPaises = ["arg", "aus", "bra", "kor", "cro", "esp", "usa",
+			"fra", "ned", "eng", "jpn", "mar", "pol", "por", "sen", "sui"];
 		let indiceAtual = 0;
+
+		function sincAlbum(){
+            
+            const figurinhasSalvas = JSON.parse(localStorage.getItem('collection-stickers') || "[]");            
+            figurinhasSalvas.forEach(sticker => {
+                const sigla = sticker.team; 
+
+                if(bancoDeDadosAlbum[sigla]){
+                    let classeCSS = "";
+                    if(sticker.position == 1){
+                        classeCSS = "selecao";
+                    }
+                    
+                    bancoDeDadosAlbum[sigla].coladas[sticker.position] = {
+                        img: `../../asset/${sticker.url.replace('src/asset/', '')}`, 
+                        classeExtra: classeCSS
+                     };
+                }
+            });
+        }
 
 		function renderizarAlbum() {
 			const grid = document.getElementById("albumGrid");
@@ -232,7 +251,7 @@
 
 				if (figurinhaColada) {
 					divFigurinha.className = `col-3 fig ${figurinhaColada.classeExtra}`;
-					divFigurinha.innerHTML = `<img src="${figurinhaColada.img}" alt="Figurinha ${i}">`;
+					divFigurinha.innerHTML = `<img src="${figurinhaColada.img}" alt="Figurinha ${i}" style="width: 100%; height: 100%; object-fit: cover; border-radius: 4px;">`;
 				} else {
 					divFigurinha.className = 'col-3 fig';
 					divFigurinha.innerText = i;
@@ -265,19 +284,18 @@
 		}
 
 		window.onload = () => {
-			renderizarAlbum();
-		};
 
-		window.onload = () => {
-  			const params = new URLSearchParams(window.location.search);
-  			const paisParam = params.get('pais');
+            sincAlbum(); 
 
-  			if (paisParam && ordemPaises.includes(paisParam)) {
-    			indiceAtual = ordemPaises.indexOf(paisParam);
-  			}
+            const params = new URLSearchParams(window.location.search);
+            const paisParam = params.get('pais');
 
-  			renderizarAlbum();
-		};
+            if (paisParam && ordemPaises.includes(paisParam)) {
+                indiceAtual = ordemPaises.indexOf(paisParam);
+            }
+
+            renderizarAlbum();
+        };
 	</script>
 	<script src="../../public/stickers.js"></script>
 	<script src="../../pages/sorteiofig.js"></script>	
