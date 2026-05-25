@@ -3,6 +3,7 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    
 }
 
 .container {
@@ -33,7 +34,7 @@ body {
     max-width: 140px;
 }
 
-.team-container {
+.team-button {
     padding: 8px 12px;
     display: flex;
     flex-direction: column;
@@ -42,6 +43,11 @@ body {
     justify-content: center;
     border: none;
     background: none;
+}
+.team-score{
+    min-width: 30px;
+    text-align: center;
+    font-weight: bold;
 }
 
 
@@ -52,6 +58,17 @@ body {
 .team-title {
     font-size: 14px;
     font-weight: 500;
+}
+
+.team-container{
+    display: flex;
+    align-items: center;
+}
+
+.champion-text{
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 3rem;
 }
 
 @media (max-width: 768px) {
