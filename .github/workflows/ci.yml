@@ -24,11 +24,4 @@ jobs:
 
       - run: pnpm install --frozen-lockfile
 
-      - run: pnpm build
-
-      - uses: cypress-io/github-action@v6
-        with:
-          install: false
-          build: pnpm build
-          start: pnpm preview
-          wait-on: http://localhost:4173
+      - run: pnpm test:e2e
