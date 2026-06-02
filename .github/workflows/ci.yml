@@ -2,8 +2,7 @@ name: CI
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
   pull_request:
 
 jobs:
@@ -26,6 +25,5 @@ jobs:
 
       - uses: cypress-io/github-action@v6
         with:
-          install: false
           start: pnpm serve
-          wait-on: http://localhost:8080
+          wait-on: 'http://localhost:8080'
