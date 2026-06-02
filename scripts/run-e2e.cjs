@@ -4,7 +4,7 @@ const path = require('path');
 const { spawn } = require('child_process');
 
 const rootDir = path.resolve(__dirname, '..');
-const port = 4173;
+const port = 8080;
 
 const contentTypes = {
   '.css': 'text/css; charset=utf-8',
