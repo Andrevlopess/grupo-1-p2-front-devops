@@ -1600,3 +1600,4 @@ const stickers =[
         "position": "20"
     }
 ]
+window.stickers = stickers;
