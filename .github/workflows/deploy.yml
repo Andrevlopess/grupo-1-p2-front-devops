@@ -33,6 +33,6 @@ jobs:
       - name: Azure app
         uses: Azure/webapps-deploy@v3.0.1
         with:
-          app-name: album-copa
+          app-name: album-copa-devops
           publish-profile: ${{ secrets.AZ_PUBLISH_PROFILE }}
           image: ${{ secrets.ACR_LOGIN_SERVER }}/grupo-1-p2-front-devops:latest
