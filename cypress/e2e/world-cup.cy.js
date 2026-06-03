@@ -10,7 +10,7 @@ describe('World Cup sticker album', () => {
     cy.visit(bracketsPath);
 
     cy.contains('h1', 'Copa do mundo de 2022').should('be.visible');
-    cy.get('.champion-text').should('contain.text', 'Champion');
+    cy.get('.champion-text').should('contain.text', 'Campeão');
     cy.contains('a', 'Ir para o Album').click();
 
     cy.url().should('include', albumPath);
