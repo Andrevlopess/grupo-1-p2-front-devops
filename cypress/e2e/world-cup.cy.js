@@ -58,7 +58,7 @@ describe('World Cup sticker album', () => {
 
     cy.visit(`${albumPath}?pais=sen`);
 
-    cy.get('#appContainer').should('have.attr', 'style').and('contain', 'fundo-senegal.png');
+    cy.get('#appContainer').should('have.attr', 'style').and('contain', 'fundo-senegal.webp');
     cy.get('#albumGrid img').should('have.length', 7);
     cy.get('#albumGrid .selecao img').should('have.attr', 'alt', 'Figurinha 1');
   });
