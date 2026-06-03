@@ -13,28 +13,24 @@ jobs:
     if: github.event.workflow_run.conclusion == 'success' 
     
     steps:
-      - uses: actions/checkout@v4
+      - name: ACR Login
+        uses: azure/docker-login@v1
         with:
-          fetch-depth: 0
+          login-server: ${{ secrets.ACR_LOGIN_SERVER }}
+          username: ${{ secrets.ACR_USERNAME }}
+          password: ${{ secrets.ACR_PASSWORD }}
 
-      - name: Docker login
-        uses: docker/login-action@v3.4.0
-        with:
-          username: ${{ secrets.DOCKER_USER }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
-
-      - name: Build and push docker image
+      - name: Build and push to ACR
         uses: docker/build-push-action@v6.15.0
         with:
-          context: . 
+          context: .
           file: ./Dockerfile
           push: true
-          tags: andrevlopess/grupo-1-p2-front-devops:latest
+          tags: ${{ secrets.ACR_LOGIN_SERVER }}/grupo-1-p2-front-devops:latest
 
       - name: Azure app
         uses: Azure/webapps-deploy@v3.0.1
         with:
           app-name: album-copa
           publish-profile: ${{ secrets.AZ_PUBLISH_PROFILE }}
-          image: andrevlopess/grupo-1-p2-front-devops:latest
-          
+          image: ${{ secrets.ACR_LOGIN_SERVER }}/grupo-1-p2-front-devops:latest
