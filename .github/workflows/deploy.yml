@@ -13,6 +13,8 @@ jobs:
     if: github.event.workflow_run.conclusion == 'success' 
     
     steps:
+      - uses: actions/checkout@v4 
+
       - name: ACR Login
         uses: azure/docker-login@v1
         with:
